@@ -5,13 +5,19 @@ import { Input } from "@chakra-ui/react";
 
 export default function Navbar() {
   return (
-    <Flex margin="7" justifyContent="space-around" alignItems="center">
+    <Flex
+      marginBottom="7"
+      padding="2"
+      justifyContent="space-around"
+      alignItems="center"
+    >
       <Image src="/images/Artistically.svg" alt="Artistically Logo" />
       <Input
         placeholder="Search for Tags, Artist, Topics..."
         background="white"
         size="sm"
         borderRadius="50"
+        width="55%"
       />
       <Flex align="center">
         <Link href="/" marginX="20px" fontWeight="bold">
