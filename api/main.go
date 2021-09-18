@@ -1,18 +1,19 @@
 package main
 
 import (
-	"artistically/api/routes"
 	"log"
 
+	"artistically/api/router"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
 func main() {
 
-	app := fiber.New()
-
-	routes.SpreadRoutes(app)
-
-	log.Fatal(app.Listen(":3000"))
-
+	api := fiber.New()
+	api.Use(cors.New())
+	api.Use(logger.New())
+	router.Setup(api)
+	log.Fatal(api.Listen(":3000"))
 }
