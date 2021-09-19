@@ -10,5 +10,11 @@ import (
 func Setup(app *fiber.App) {
 	api := app.Group("/v1", logger.New())
 
-	api.Get("/art/:id", handler.GetArt)
+	api.Get("/", handler.Index)
+
+	art := api.Group("/art")
+
+	art.Get("/:id", handler.GetArtByID)
+	art.Post("/art", handler.PostArt)
+	art.Get("/arts/:id", handler.GetUserArtsById)
 }
