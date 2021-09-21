@@ -11,7 +11,7 @@ export default function Navbar() {
       justifyContent="space-around"
       alignItems="center"
     >
-      <Image src="/images/Artistically.svg" alt="Artistically Logo" />
+      <Image src="/images/ArtisticallyDark.svg" alt="Artistically Logo" />
       <Input
         placeholder="Search for Tags, Artist, Topics..."
         background="white"
